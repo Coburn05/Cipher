@@ -20,4 +20,6 @@ public class MatrixManager {
     public static String getSecondChar(char letter, int randNum) {
         return "NULL";
     }
+
+    public static int getNumWays(char letter) { return -1; }
 }

@@ -12,12 +12,17 @@ public class HashManager {
         SecureRandom random = new SecureRandom();
         byte[] bytes = new byte[length];
         random.nextBytes(bytes);
-        return Base64.getEncoder().encodeToString(bytes);  // Encoding as base64 string
+        return Base64.getEncoder().encodeToString(bytes);
+        // Encoding as base64 string
     }
 
     // Method to hash the input string using SHA-256
-    public static String hashString(String input) throws NoSuchAlgorithmException {
-        MessageDigest digest = MessageDigest.getInstance("SHA-256");
+    public static String hashString(String input)
+            throws NoSuchAlgorithmException {
+
+        MessageDigest digest =
+                MessageDigest.getInstance("SHA-256");
+
         byte[] hashBytes = digest.digest(input.getBytes());
         return bytesToHex(hashBytes);
     }
@@ -35,14 +40,17 @@ public class HashManager {
         try {
             // Generate random string
             String randomString = generateRandomString(16);
-            System.out.println("Random String: " + randomString);
+            System.out.print("Random String: ");
+            System.out.println(randomString);
 
             // Hash the random string
             String hashedString = hashString(randomString);
-            System.out.println("Hashed String (SHA-256): " + hashedString);
+            System.out.println("Hashed String (SHA-256): ");
+            System.out.println(hashedString);
 
         } catch (NoSuchAlgorithmException e) {
-            System.out.println("Error: " + e.getMessage());
+            System.out.print("Error: ");
+            System.out.println(e.getMessage());
         }
     }
 }

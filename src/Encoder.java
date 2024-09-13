@@ -28,7 +28,8 @@ public class Encoder {
             // tell matrix manager what letter it returns number of
              // ways that it can be written
             // using this pick random number 1-num and pass that to get letter
-        int randNum = -1;
+        int n = MatrixManager.getNumWays(letter);
+        int randNum = (int)(Math.random() * n) + 1;
 
         String first = MatrixManager.getFirstChar(letter, randNum);
         String second = MatrixManager.getSecondChar(letter, randNum);
