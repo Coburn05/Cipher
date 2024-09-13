@@ -1,4 +1,8 @@
+package src;
+
 public class MatrixManager {
+    // DOES NOT HANDLE RANDOMIZATION
+    // ONLY DOES LETTER TO CHARACTER CONVERSION
     // define matrix here
     //  - will exist as two matrices
     //    - one is english
@@ -8,4 +12,12 @@ public class MatrixManager {
     //  - rotate
     //  - shift
     //  - moving shift?
+
+    public static String getFirstChar(char letter, int randNum) {
+        return "NULL";
+    }
+
+    public static String getSecondChar(char letter, int randNum) {
+        return "NULL";
+    }
 }
