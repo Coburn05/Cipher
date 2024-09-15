@@ -15,33 +15,33 @@ public class MatrixManager {
 
     // represents the "letters" on the matrix
     // using a letters row and column we can find its character pair
-    private static String[][] matrixRef = {
-            {"a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k"},
-            {"l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v"},
-            {"w", "x", "y", "z", "1", "2", "3", "4", "5", "6", "7"},
-            {"8", "9", "0", " ", "a", "b", "c", "d", "e", "f", "g"},
-            {"h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r"},
-            {"s", "t", "u", "v", "w", "x", "y", "z", "1", "2", "3"},
-            {"4", "5", "6", "7", "8", "9", "0", " ", "a", "b", "c"},
-            {"d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n"},
-            {"o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y"},
-            {"z", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"},
-            {"_", "a", "e", "i", "o", "u", "y", " ", "a", "e", "i"}
+    private static char[][] matrixRef = {
+            {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'},
+            {'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v'},
+            {'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7'},
+            {'8', '9', '0', ' ', 'a', 'b', 'c', 'd', 'e', 'f', 'g'},
+            {'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r'},
+            {'s', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3'},
+            {'4', '5', '6', '7', '8', '9', '0', ' ', 'a', 'b', 'c'},
+            {'d', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'},
+            {'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y'},
+            {'z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'},
+            {' ', 'a', 'e', 'i', 'o', 'u', 'y', ' ', 'a', 'e', 'i'}
     };
 
-    // this represents the characters for the row and column at their index
+    // this represents the  characters for the row and column at their index
     private static String[][] matrixVals = {
             {"1", "3", "7", "A", "%", "@", "&", "g", "{", ">", "#"},
             {"2", "5", "C", "N", ")", ">", "<", "G", "!", "(", "]"}
     };
 
     private static int[] getLocChar(char letter, int randNum) {
-        int start[] = MatrixManager.getStart(letter, randNum);
+        int start[] = new int[]{0, 0};//MatrixManager.getStart(letter, randNum);
 
-        for(int x = start[0]; x < matrixRef.length; x++) {
-            for(int y = start[1]; y < matrixRef[x].length; y++) {
-                if(String.valueOf(letter).equals(matrixRef[x][y]))
-                    return new int[]{x, y};
+        for(int col = start[0]; col < matrixRef.length; col++) {
+            for(int row = start[1]; row < matrixRef[col].length; row++) {
+                if(letter == matrixRef[row][col])
+                    return new int[]{row, col};
             }
         }
         return new int[]{-1, -1};
@@ -49,7 +49,8 @@ public class MatrixManager {
 
     public static String getCharPair(char letter, int randNum) {
         int loc[] = getLocChar(letter, randNum);
-        return (matrixVals[0][loc[0]] + matrixVals[1][1]);
+        // loc[row, col]
+        return (matrixVals[0][loc[1]] + matrixVals[1][loc[0]]);
     }
 
     public static int getNumWays(char letter) {
@@ -62,12 +63,12 @@ public class MatrixManager {
 
     private static int[] getStart(char letter, int variation) {
         int numSeen = 0;
-        for(int x = 0; x < matrixRef.length; x++) {
-            for(int y = 0; y < matrixRef[x].length; y++) {
-                if(String.valueOf(letter).equals(matrixRef[x][y])) {
+        for(int row = 0; row < matrixRef.length; row++) {
+            for(int col = 0; col < matrixRef[row].length; col++) {
+                if(String.valueOf(letter).equals(matrixRef[row][col])) {
                     numSeen++;
                     if(numSeen > variation)
-                        return new int[]{x, y};
+                        return new int[]{row, col};
                 }
             }
         }

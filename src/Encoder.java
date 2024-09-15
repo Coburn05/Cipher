@@ -33,4 +33,23 @@ public class Encoder {
 
         return MatrixManager.getCharPair(letter, randNum);
     }
+
+    public static String convertMsg(String msgPlainText) {
+        String encodedLvl1 = "";
+
+        for(char letter: msgPlainText.toCharArray()) {
+            System.out.print(letter + " ");
+            System.out.println(getPairFromMatrix(letter));
+            encodedLvl1 += getPairFromMatrix(letter);
+        }
+
+        System.out.println(encodedLvl1);
+        return encodedLvl1;
+    }
+
+    public static void main(String[] args) {
+        String msg = "hello this is a sample message";
+        System.out.println(msg);
+        Encoder.convertMsg(msg);
+    }
 }

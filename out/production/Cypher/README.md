@@ -1,2 +1,1 @@
-# Cypher
-Custom Cypher I made. 
+More info found in /src/Text Files
