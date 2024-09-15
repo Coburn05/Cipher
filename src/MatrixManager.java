@@ -36,7 +36,7 @@ public class MatrixManager {
     };
 
     private static int[] getLocChar(char letter, int randNum) {
-        int start[] = new int[]{0, 0};//MatrixManager.getStart(letter, randNum);
+        int start[] = MatrixManager.getStart(letter, randNum);
 
         for(int col = start[0]; col < matrixRef.length; col++) {
             for(int row = start[1]; row < matrixRef[col].length; row++) {
@@ -65,7 +65,7 @@ public class MatrixManager {
         int numSeen = 0;
         for(int row = 0; row < matrixRef.length; row++) {
             for(int col = 0; col < matrixRef[row].length; col++) {
-                if(String.valueOf(letter).equals(matrixRef[row][col])) {
+                if(letter == matrixRef[row][col]) {
                     numSeen++;
                     if(numSeen > variation)
                         return new int[]{row, col};

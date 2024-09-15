@@ -28,8 +28,8 @@ public class Encoder {
             // tell matrix manager what letter it returns number of
              // ways that it can be written
             // using this pick random number 1-num and pass that to get letter
-        int n = MatrixManager.getNumWays(letter) - 1;
-        int randNum = (int)(Math.random() * n);
+        int n = MatrixManager.getNumWays(letter);
+        int randNum = (int)(Math.random() * n) + 1;
 
         return MatrixManager.getCharPair(letter, randNum);
     }
@@ -48,7 +48,7 @@ public class Encoder {
     }
 
     public static void main(String[] args) {
-        String msg = "hello this is a sample message";
+        String msg = "sample msg 123 123   111 333 222";
         System.out.println(msg);
         Encoder.convertMsg(msg);
     }
