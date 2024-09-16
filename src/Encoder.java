@@ -2,18 +2,18 @@ package src;
 
 public class Encoder {
     //private String plainText;
-    private final String level1Encryption;
+    //private final String level1Encryption;
 
     // read input from user
     // convert to encoded message
 
-    public Encoder(String plainText) {
-        level1Encryption = matrixEncode(plainText);
-    }
+    //public Encoder(String plainText) {
+     //   level1Encryption = matrixEncode(plainText);
+    //}
 
-    public String getLevel1Message() {
-        return level1Encryption;
-    }
+    //public String getLevel1Message() {
+     //   return level1Encryption;
+    //}
 
     private static String matrixEncode(String plainText) {
         StringBuilder encrypted = new StringBuilder();
@@ -34,22 +34,21 @@ public class Encoder {
         return MatrixManager.getCharPair(letter, randNum);
     }
 
-    public static String convertMsg(String msgPlainText) {
-        String encodedLvl1 = "";
+    public static String encodeMsg(String msgPlainText) {
+        StringBuilder encodedLvl1 = new StringBuilder();
 
         for(char letter: msgPlainText.toCharArray()) {
-            //System.out.print(letter + " ");
-            //System.out.println(getPairFromMatrix(letter));
-            encodedLvl1 += getPairFromMatrix(letter);
+            encodedLvl1.append(getPairFromMatrix(letter));
         }
 
-        System.out.println(encodedLvl1);
-        return encodedLvl1;
+        return encodedLvl1.toString();
     }
 
     public static void main(String[] args) {
         String msg = "sample msg 123 123   111 333 222";
-        System.out.println(msg);
-        Encoder.convertMsg(msg);
+
+        String encoded = Encoder.encodeMsg(msg);
+
+        Decoder.decode(encoded);
     }
 }

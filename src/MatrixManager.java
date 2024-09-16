@@ -78,4 +78,12 @@ public class MatrixManager {
         System.out.println("hh");
         return new int[]{-1, -1};
     }
+
+    public static char getLetterFromPair(String pair) {
+        String first = pair.substring(0, 1);
+        String second = pair.substring(1);
+
+        System.out.println(first + " " + second);
+        return 'a';
+    }
 }
