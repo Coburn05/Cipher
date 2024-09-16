@@ -30,13 +30,13 @@ public class MatrixManager {
     };
 
     // this represents the  characters for the row and column at their index
-    private static String[][] matrixVals = {
+    private static final String[][] matrixVals = {
             {"1", "3", "7", "A", "%", "@", "&", "g", "{", ">", "#"},
             {"2", "5", "C", "N", ")", ">", "<", "G", "!", "(", "]"}
     };
 
     private static int[] getLocChar(char letter, int randNum) {
-        int start[] = MatrixManager.getStart(letter, randNum);
+        int[] start = MatrixManager.getStart(letter, randNum);
 
         for(int col = start[0]; col < matrixRef.length; col++) {
             for(int row = start[1]; row < matrixRef[col].length; row++) {
@@ -48,7 +48,7 @@ public class MatrixManager {
     }
 
     public static String getCharPair(char letter, int randNum) {
-        int loc[] = getLocChar(letter, randNum);
+        int[] loc = getLocChar(letter, randNum);
         // loc[row, col]
         return (matrixVals[0][loc[1]] + matrixVals[1][loc[0]]);
     }
@@ -75,7 +75,6 @@ public class MatrixManager {
                 }
             }
         }
-        System.out.println("hh");
         return new int[]{-1, -1};
     }
 
