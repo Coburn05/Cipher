@@ -38,8 +38,8 @@ public class Encoder {
         String encodedLvl1 = "";
 
         for(char letter: msgPlainText.toCharArray()) {
-            System.out.print(letter + " ");
-            System.out.println(getPairFromMatrix(letter));
+            //System.out.print(letter + " ");
+            //System.out.println(getPairFromMatrix(letter));
             encodedLvl1 += getPairFromMatrix(letter);
         }
 

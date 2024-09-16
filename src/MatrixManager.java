@@ -65,13 +65,17 @@ public class MatrixManager {
         int numSeen = 0;
         for(int row = 0; row < matrixRef.length; row++) {
             for(int col = 0; col < matrixRef[row].length; col++) {
+                //System.out.println(matrixRef[row][col] + " Looking for: " +  letter);
                 if(letter == matrixRef[row][col]) {
                     numSeen++;
-                    if(numSeen > variation)
-                        return new int[]{row, col};
+                    if(numSeen == variation) {
+                        //System.out.println("return: " + row + " " + col);
+                        return new int[]{col, row};
+                    }
                 }
             }
         }
+        System.out.println("hh");
         return new int[]{-1, -1};
     }
 }
