@@ -85,4 +85,27 @@ public class MatrixManager {
         System.out.println(first + " " + second);
         return 'a';
     }
+
+    // pair must be a 2 letter string
+    public static Integer[] getLocation(String pair) {
+        Integer[] locs = new Integer[2];
+        String first = pair.substring(0, 1);
+        String second = pair.substring(1);
+
+        for(int i = 0; i < matrixRef[0].length; i++) {
+            if(first.equals(matrixRef[0][i])) {
+                locs[0] = i;
+                break;
+            }
+        }
+
+        for(int i = 0; i < matrixRef[0].length; i++) {
+            if(first.equals(matrixRef[1][i])) {
+                locs[1] = i;
+                break;
+            }
+        }
+
+        return locs;
+    }
 }
