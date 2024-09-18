@@ -59,6 +59,7 @@ public class MatrixManager {
         return (matrixVals[0][loc[1]] + matrixVals[1][loc[0]]);
     }
 
+    // needs to be updated
     public static int getNumWays(char letter) {
         return switch (letter) {
             case 'a', 'e', 'i' -> 5;
@@ -81,7 +82,7 @@ public class MatrixManager {
                 }
             }
         }
-        return new int[]{-1, -1};
+        return new int[]{0, 0};
     }
 
     public static char getLetterFromPair(String pair) {
