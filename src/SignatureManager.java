@@ -25,7 +25,7 @@ public class SignatureManager {
 
     private static boolean verifySenderID(String givenHash) {
         // not sure if this functionality is needed
-        // msg verification complex enough as is, this is making things harder 
+        // msg verification complex enough as is, this is making things harder
         return false;
     }
 }

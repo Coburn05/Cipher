@@ -7,8 +7,8 @@ public class Encoder {
     // read input from user
     // convert to encoded message
 
-    //public Encoder(String plainText) {
-     //   level1Encryption = matrixEncode(plainText);
+    // public Encoder(String plainText) {
+    //   level1Encryption = matrixEncode(plainText);
     //}
 
     //public String getLevel1Message() {
@@ -45,7 +45,7 @@ public class Encoder {
     }
 
     public static void main(String[] args) {
-        String msg = "msg ABC 123 !@#";
+        String msg = "msg ABC 123 !@# a a a s sdas\\asdadsa \\";
 
         String encoded = Encoder.encodeMsg(msg);
         String encoded1 = Encoder.encodeMsg(msg);
@@ -56,6 +56,6 @@ public class Encoder {
         System.out.println(encoded1);
         System.out.println(encoded2);
 
-        //Decoder.decode(encoded);
+        Decoder.decode(encoded);
     }
 }

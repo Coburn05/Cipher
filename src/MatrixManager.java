@@ -89,8 +89,25 @@ public class MatrixManager {
         String first = pair.substring(0, 1);
         String second = pair.substring(1);
 
+        int col = 0;
+        int row = 0;
+
+        for(int i = 0; i < matrixVals[0].length; i++) {
+            if(matrixVals[0][i].equals(first)) {
+                col = i;
+                break;
+            }
+        }
+
+        for(int i = 0; i < matrixVals[1].length; i++) {
+            if(matrixVals[1][i].equals(second)) {
+                row = i;
+                break;
+            }
+        }
+
         System.out.println(first + " " + second);
-        return 'a';
+        return matrixRef[row][col];
     }
 
     // pair must be a 2 letter string
@@ -98,16 +115,18 @@ public class MatrixManager {
         Integer[] locs = new Integer[2];
         String first = pair.substring(0, 1);
         String second = pair.substring(1);
-
+        System.out.println(first + "  " + second);
         for(int i = 0; i < matrixRef[0].length; i++) {
-            if(first.equals(matrixRef[0][i])) {
+            boolean found = false;
+            if(first.equals(matrixRef[0][i]) && !found) {
+                found = true;
                 locs[0] = i;
-                break;
+                System.out.println("found somthing: " + i);
             }
         }
 
         for(int i = 0; i < matrixRef[0].length; i++) {
-            if(first.equals(matrixRef[1][i])) {
+            if(second.equals(matrixRef[1][i])) {
                 locs[1] = i;
                 break;
             }
