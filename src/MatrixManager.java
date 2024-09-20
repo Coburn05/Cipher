@@ -113,9 +113,9 @@ public class MatrixManager {
     // pair must be a 2 letter string
     public static Integer[] getLocation(String pair) {
         Integer[] locs = new Integer[2];
-        String first = pair.substring(0, 1);
-        String second = pair.substring(1);
-        System.out.println(first + "  " + second);
+        String first = String.valueOf(pair.indexOf(0));
+        String second = String.valueOf(pair.indexOf(1));
+        System.out.println(first + "  " + second  + "this");
         for(int i = 0; i < matrixRef[0].length; i++) {
             boolean found = false;
             if(first.equals(matrixRef[0][i]) && !found) {

@@ -29,6 +29,7 @@ public class Decoder {
     }
 
     // do i really need this?
+    // i do not see a reason for this, can be replased with
     private static List<Integer[]> getLocsOnMatrix(List<String> list) {
         ArrayList<Integer[]> locationList = new ArrayList<>();
 
