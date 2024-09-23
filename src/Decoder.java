@@ -6,9 +6,9 @@ public class Decoder {
     // responsible for decoding
     //  - convert character pair to letter
 
-    public static void decode(String encoded) {
+    public static String decode(String encoded) {
         List<String> pairList = getPair(encoded);
-        List<Integer[]> locList = decodeMsg(pairList);
+        return decodeMsg(pairList).toString();
     }
 
     private static List<String> getPair(String encoded) {
@@ -28,15 +28,14 @@ public class Decoder {
         return pairList;
     }
 
-    // do i really need this?
-    // i do not see a reason for this, can be replased with
-    private static List<Integer[]> decodeMsg(List<String> list) {
-        ArrayList<Integer[]> locationList = new ArrayList<>();
+    private static String decodeMsg(List<String> list) {
+        //ArrayList<Integer[]> locationList = new ArrayList<>();
 
-        for(String pair: list) {
-            System.out.print(pair);
+        String msg = "";
+        for(String str: list) {
+            msg += str;
         }
 
-        return locationList;
+        return msg;
     }
 }

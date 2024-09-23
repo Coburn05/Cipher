@@ -45,13 +45,11 @@ public class Encoder {
     }
 
     public static void main(String[] args) {
-        String msg = "qazwsxedcrfvtgbyhnujmikolp";
+        String msg = "something else";
 
         String encoded = Encoder.encodeMsg(msg);
-
-        System.out.println(msg);
         System.out.println(encoded);
-
-        Decoder.decode(encoded);
+        //System.out.println(Decoder.decode(encoded));
+        System.out.println(Decoder.decode("g5RCR>%5153G1]1!>N1]g5A535{NANp2%23Cp2"));
     }
 }
