@@ -45,7 +45,7 @@ public class Encoder {
     }
 
     public static void main(String[] args) {
-        String msg = "sample msg";
+        String msg = "qazwsxedcrfvtgbyhnujmikolp";
 
         String encoded = Encoder.encodeMsg(msg);
 

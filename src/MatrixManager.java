@@ -109,31 +109,4 @@ public class MatrixManager {
         //System.out.println(first + " " + second);
         return matrixRef[row][col];
     }
-
-    // pair must be a 2 letter string
-    public static String[] getLocation(String pair) {
-        System.out.println(pair + "hello");
-        Integer[] locs = new Integer[2];
-        String first = String.valueOf(pair.indexOf(0));
-        String second = String.valueOf(pair.indexOf(1));
-        //System.out.println(first + "  " + second  + "this");
-        for(int i = 0; i < matrixRef[0].length; i++) {
-            boolean found = false;
-            //System.out.println("searching...");
-            if(first.equals(matrixRef[0][i]) && !found) {
-                found = true;
-                locs[0] = i;
-                //System.out.println("found somthing: " + i);
-            }
-        }
-
-        for(int i = 0; i < matrixRef[0].length; i++) {
-            if(second.equals(matrixRef[1][i])) {
-                locs[1] = i;
-                break;
-            }
-        }
-
-        return locs;
-    }
 }

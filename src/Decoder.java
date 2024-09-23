@@ -8,7 +8,7 @@ public class Decoder {
 
     public static void decode(String encoded) {
         List<String> pairList = getPair(encoded);
-        List<Integer[]> locList = getLocsOnMatrix(pairList);
+        List<Integer[]> locList = decodeMsg(pairList);
     }
 
     private static List<String> getPair(String encoded) {
@@ -30,11 +30,11 @@ public class Decoder {
 
     // do i really need this?
     // i do not see a reason for this, can be replased with
-    private static List<Integer[]> getLocsOnMatrix(List<String> list) {
+    private static List<Integer[]> decodeMsg(List<String> list) {
         ArrayList<Integer[]> locationList = new ArrayList<>();
 
         for(String pair: list) {
-            locationList.add(MatrixManager.getLocation(pair));
+            System.out.print(pair);
         }
 
         return locationList;
