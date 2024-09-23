@@ -35,9 +35,6 @@ public class Decoder {
 
         for(String pair: list) {
             locationList.add(MatrixManager.getLocation(pair));
-            for(Integer i: MatrixManager.getLocation(pair)) {
-                System.out.println("Decoder getLocsOnMatrix");
-            }
         }
 
         return locationList;

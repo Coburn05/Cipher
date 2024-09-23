@@ -30,7 +30,7 @@ public class MatrixManager {
             {'$', '%', '^', '&', '*', '(', ')', '1', '2', '3', '4', '5', '6', '7', '8', '9'},
             {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P'},
             {'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '+', '+', '+', '+', '+', '+'},
-            {':', ';', '\'', '\'', ',', '<', '.', '>', '/', '?', '\\', '|', '{', '}', '[', ']'},
+            {':', ';', '\\', '\'', ',', '<', '.', '>', '/', '?', '\\', '|', '{', '}', '[', ']'},
             {'_', '-', '=', '+', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'}
     };
 
@@ -106,22 +106,24 @@ public class MatrixManager {
             }
         }
 
-        System.out.println(first + " " + second);
+        //System.out.println(first + " " + second);
         return matrixRef[row][col];
     }
 
     // pair must be a 2 letter string
-    public static Integer[] getLocation(String pair) {
+    public static String[] getLocation(String pair) {
+        System.out.println(pair + "hello");
         Integer[] locs = new Integer[2];
         String first = String.valueOf(pair.indexOf(0));
         String second = String.valueOf(pair.indexOf(1));
-        System.out.println(first + "  " + second  + "this");
+        //System.out.println(first + "  " + second  + "this");
         for(int i = 0; i < matrixRef[0].length; i++) {
             boolean found = false;
+            //System.out.println("searching...");
             if(first.equals(matrixRef[0][i]) && !found) {
                 found = true;
                 locs[0] = i;
-                System.out.println("found somthing: " + i);
+                //System.out.println("found somthing: " + i);
             }
         }
 

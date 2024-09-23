@@ -45,16 +45,12 @@ public class Encoder {
     }
 
     public static void main(String[] args) {
-        String msg = "msg ABC 123 !@# a a a s sdas\\asdadsa \\";
+        String msg = "sample msg";
 
         String encoded = Encoder.encodeMsg(msg);
-        String encoded1 = Encoder.encodeMsg(msg);
-        String encoded2 = Encoder.encodeMsg(msg);
 
         System.out.println(msg);
         System.out.println(encoded);
-        System.out.println(encoded1);
-        System.out.println(encoded2);
 
         Decoder.decode(encoded);
     }
