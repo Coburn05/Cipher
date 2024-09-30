@@ -62,9 +62,16 @@ public class MatrixManager {
     // needs to be updated
     public static int getNumWays(char letter) {
         return switch (letter) {
-            case 'a', 'e', 'i' -> 5;
-            case 'o', 'u', 'y' -> 4;
-            default -> 3;
+            case 'a', 'i', 'y' -> 5;
+            case 't', 'f', 'c', 'k', 'j', 'h', 'w',
+                 'r', 'e', 'q', 'd', 'b', 'g', 'o',
+                 'm', 'u', 's', 'v', 'l', '4', '3',
+                 '1', '7', 'x', '2', '6', 'z', '5',
+                 '8', '9' -> 4;
+            case 'N', 'M', 'R', 'P', 'S', 'O', 'Q',
+                 'W', 'U', 'X', 'T', 'V', 'Y', 'Z',
+                 '+' -> 2;
+            default -> 1;
         };
     }
 
