@@ -2,7 +2,8 @@ package src;
 
 /*
 ideas on how this could be done
-RSA keys??
+RSA will be used unless a better alternative can be found
+RSA keys
   - not super hard to break into
 
 Pass phrase, add character integer values to signature
