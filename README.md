@@ -1,3 +1,8 @@
+for contributing please open a branch with your name.
+create and/or assign the issue you want to work on to yourself
+when you finish with your work have the last commit be something like
+"finished, works as expected"
+
 More info found in /src/Text Files
 
 Message is encrypted using a 11x11 matrix
