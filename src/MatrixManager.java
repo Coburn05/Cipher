@@ -39,8 +39,8 @@ public class MatrixManager {
     // Method to get the location (row, col) of a character in the matrix based on random variation
     private static int[] getLocChar(char letter, int randNum) {
         int[] start = MatrixManager.getStart(letter, randNum); // Get the starting point based on variation
-
-        for (int col = start[0]; col < matrixRef.length; col++) {
+        
+        for(int col = start[0]; col < matrixRef.length; col++) {
             for (int row = start[1]; row < matrixRef[col].length; row++) {
                 if (letter == matrixRef[row][col])
                     return new int[]{row, col}; // Return location if found
@@ -59,7 +59,7 @@ public class MatrixManager {
 
     // Needs to be updated: This method returns the number of ways a letter can be encoded
     public static int getNumWays(char letter) {
-        return switch (letter) {
+        return switch(letter) {
             case 'a', 'i', 'y' -> 5; // Some letters have 5 variations
             case 't', 'f', 'c', 'k', 'j', 'h', 'w',
                  'r', 'e', 'q', 'd', 'b', 'g', 'o',
@@ -74,9 +74,10 @@ public class MatrixManager {
     }
 
     // Method to get the starting location of the letter based on variation number
+    // looks soooooo good :)
     private static int[] getStart(char letter, int variation) {
         int numSeen = 0;
-        for (int row = 0; row < matrixRef.length; row++) {
+        for(int row = 0; row < matrixRef.length; row++) {
             for (int col = 0; col < matrixRef[row].length; col++) {
                 //System.out.println(matrixRef[row][col] + " Looking for: " +  letter);
                 if (letter == matrixRef[row][col]) {
@@ -100,7 +101,7 @@ public class MatrixManager {
         int row = 0;
 
         // Find the column index for the first part of the pair
-        for (int i = 0; i < matrixVals[0].length; i++) {
+        for(int i = 0; i < matrixVals[0].length; i++) {
             if (matrixVals[0][i].equals(first)) {
                 col = i;
                 break;
@@ -108,7 +109,7 @@ public class MatrixManager {
         }
 
         // Find the row index for the second part of the pair
-        for (int i = 0; i < matrixVals[1].length; i++) {
+        for(int i = 0; i < matrixVals[1].length; i++) {
             if (matrixVals[1][i].equals(second)) {
                 row = i;
                 break;
