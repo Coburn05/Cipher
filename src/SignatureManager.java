@@ -1,31 +1,34 @@
 package src;
 
 public class SignatureManager {
-    // handles actions relating to signatures
-    //  generates signatures based on keys
-    //  locates and extracts information
-    //  handles verification of signature
+    // Handles actions related to signatures:
+    //  - Generates signatures based on keys
+    //  - Locates and extracts relevant information
+    //  - Verifies the authenticity of a given signature
 
     private static String senderID = "some super secret string like this one";
     private static String senderHash = "should be a hash";
 
+    // Method to verify the integrity and authenticity of a message based on its signature
     public static boolean verifyMsg(String msg, String signature, int msgNum) {
-        // will have to verify senderID from hash
-        // will have to get new rolling code for the message
-        // will have to compare hash of rolling code+senderID to given signature
-        //   - excluding header information (first 9 characters designating matrix transformations)
+        // Will verify senderID using the hash
+        // Generate a new rolling code for the message (likely based on msgNum)
+        // Combine the rolling code and senderID, hash it, and compare with the given signature
+        // Exclude the header information (first 9 characters that represent matrix transformations)
 
         return false;
     }
 
+    // Method to compute a rolling code based on the message number (msgNum)
     private static int computeRollingCode(int msgNum) {
-        // using some function compute the rolling code for the given msgNumber
+        // Use some formula or algorithm to compute the rolling code for the given msgNumber
         return -1;
     }
 
+    // Method to verify if the given sender's hash matches the expected senderHash
     private static boolean verifySenderID(String givenHash) {
-        // not sure if this functionality is needed
-        // msg verification complex enough as is, this is making things harder
+        // It's uncertain if this functionality will be needed
+        // Message verification is already complex, and this might add unnecessary difficulty
         return false;
     }
 }
