@@ -39,7 +39,7 @@ public class MatrixManager {
     // Method to get the location (row, col) of a character in the matrix based on random variation
     private static int[] getLocChar(char letter, int randNum) {
         int[] start = MatrixManager.getStart(letter, randNum); // Get the starting point based on variation
-        
+
         for(int col = start[0]; col < matrixRef.length; col++) {
             for (int row = start[1]; row < matrixRef[col].length; row++) {
                 if (letter == matrixRef[row][col])

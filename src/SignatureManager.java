@@ -1,5 +1,24 @@
 package src;
 
+/*
+ideas on how this could be done
+RSA keys??
+  - not super hard to break into
+
+Pass phrase, add character integer values to signature
+would result in completed signature?
+ - would not be the "intuitive" approach but would only work if you have both
+   parts of the message correct
+
+don't use signatures all together
+ - instead have the handshake establish encryption
+ - until a new key is requested by the sender
+ - this would work only one way, so for two parties to send AND revive
+ - there would be 2 ciphers
+ -- issue i see with this is that if encryption happens to be broken, then the new key can
+    also be compromised
+ */
+
 public class SignatureManager {
     // Handles actions related to signatures:
     //  - Generates signatures based on keys
