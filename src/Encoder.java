@@ -11,8 +11,8 @@ public class Encoder {
     //   level1Encryption = matrixEncode(plainText);
     //}
 
-    //public String getLevel1Message() {
-     //   return level1Encryption;
+    //public String getLevel1Message()
+    //    return level1Encryption;
     //}
 
     private static String matrixEncode(String plainText) {

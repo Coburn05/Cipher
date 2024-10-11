@@ -24,5 +24,7 @@ public class RSAHandler {
         }
     }
 
-    private static String encryptRSA
+    private static String encryptRSA() {
+        return "-1";
+    }
 }
