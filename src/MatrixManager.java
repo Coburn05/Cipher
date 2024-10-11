@@ -1,4 +1,6 @@
 package src;
+import java.nio.charset.CharsetEncoder;
+import java.util.*;
 
 public class MatrixManager {
     // DOES NOT HANDLE RANDOMIZATION
@@ -36,7 +38,24 @@ public class MatrixManager {
             {"2", "5", "C", "N", ")", ">", "<", "G", "!", "(", "]", "A", "B", "#", "%", "^"}
     };
 
-    // Method to get the location (row, col) of a character in the matrix based on random variation
+    private static void count() {
+        HashMap<Character, Integer> countSet = new HashMap<>();
+
+        for(char[] arr: matrixRef) {
+            for(char letr: arr) {
+                countSet.put(letr, countSet.getOrDefault(letr, 0) + 1);
+            }
+        }
+
+        for(Map.Entry<Character, Integer> entry: countSet.entrySet()) {
+            System.out.println("char " + entry.getKey() + " | val " + entry.getValue());
+        }
+    }
+
+    //public static void main(String[] args) {
+    //   count();
+    //}
+
     private static int[] getLocChar(char letter, int randNum) {
         int[] start = MatrixManager.getStart(letter, randNum); // Get the starting point based on variation
 
@@ -59,17 +78,19 @@ public class MatrixManager {
 
     // Needs to be updated: This method returns the number of ways a letter can be encoded
     public static int getNumWays(char letter) {
-        return switch(letter) {
-            case 'a', 'i', 'y' -> 5; // Some letters have 5 variations
-            case 't', 'f', 'c', 'k', 'j', 'h', 'w',
-                 'r', 'e', 'q', 'd', 'b', 'g', 'o',
-                 'm', 'u', 's', 'v', 'l', '4', '3',
-                 '1', '7', 'x', '2', '6', 'z', '5',
-                 '8', '9' -> 4; // These letters have 4 variations
-            case 'N', 'M', 'R', 'P', 'S', 'O', 'Q',
-                 'W', 'U', 'X', 'T', 'V', 'Y', 'Z',
-                 '+' -> 2; // These letters have 2 variations
-            default -> 1; // Other characters have only 1 variation
+        return switch (letter) {
+            case '+' -> 7;
+            case 'a', 'e', 'i' ->6;
+            case 'o', 'u', 'y' -> 5;
+            case '1', '2', '3', '4', '5', '6', '7', '8', '9',
+                 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
+                 'J', 'K', 'L', 'b', 'c', 'd', 'f', 'g', 'h',
+                 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's',
+                 't', 'v', 'w', 'x', 'z' -> 4;
+            case '0' -> 3;
+            case 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U',
+                 'V', 'W', 'X', 'Y', 'Z', '\\'-> 2;
+            default -> 1;
         };
     }
 

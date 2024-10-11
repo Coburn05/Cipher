@@ -10,10 +10,6 @@ public class Encoder {
     //   level1Encryption = matrixEncode(plainText);
     //}
 
-    //public String getLevel1Message() {
-    //    return level1Encryption;
-    //}
-
     private static String matrixEncode(String plainText) {
         // Encodes the plain text by converting each character into a pair of characters using the matrix
         StringBuilder encrypted = new StringBuilder();
